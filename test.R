@@ -1,0 +1,7 @@
+notasFilmes3 <- read.csv("/home/igazev/Documentos/2020.2/Databases/data.tsv", sep = "\t")
+attach(notasFilmes)
+View(notasFilmes)
+summary(notasFilmes)
+colnames(notasFilmes) = c("Título (Alfanumérico)", "Média ponderada das notas", "Número de votos do filme")
+View(notasFilmes)
+summary(notasFilmes$`Média ponderada das notas`)
