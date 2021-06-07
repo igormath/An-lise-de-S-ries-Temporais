@@ -1,0 +1,20 @@
+brasileirao <- read.csv("C:/Users/igorx/Documents/rScripts/dataset_real.csv", sep = ";")
+attach(brasileirao)
+summary(brasileirao)
+library(modeest)
+mlv(points, method = "mfv")
+mlv(goals_scored, method = "mfv")
+mlv(perc_points_won, method = "mfv")
+sd(points)
+sd(goals_scored)
+sd(perc_points_won)
+pontos <- points
+golsMarcados <- goals_scored
+aproveitamento <- perc_points_won
+boxplot(pontos, golsMarcados, aproveitamento, notch = TRUE, outline = FALSE, names = c("Pontos", "Gols Marcados", "Aproveitamento"))
+hist(pontos, xlab = "Pontos", ylab = "Frequência")
+hist(golsMarcados, xlab = "Gols marcados por cada equipe", ylab = "Frequência")
+hist(aproveitamento, xlab = "Aproveitamento percentual de cada equipe", ylab = "Frequência")
+plot(pontos, golsMarcados, xlab = "Pontos", ylab = "Gols Marcados")
+abline(lm(pontos~golsMarcados), col = "blue")
+title("Gráfico de Dispersão")
