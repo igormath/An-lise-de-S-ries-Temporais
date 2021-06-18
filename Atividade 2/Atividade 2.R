@@ -10,3 +10,8 @@ xfit <- seq(min(homicidiosProporcional), max(homicidiosProporcional), length = 2
 yfit <- dnorm(xfit, mean = mean(homicidiosProporcional), sd = sd(homicidiosProporcional))
 yfit <- yfit * diff(histograma$mids[1:2]) * length(homicidiosProporcional)
 lines(xfit, yfit, col = "blue", lwd = 2)
+
+# Teste Jarque-Bera para atestar (ou não) a normalidade do conjunto de dados
+
+library(tseries)
+jarque.bera.test(homicidiosProporcional)
